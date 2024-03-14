@@ -31,7 +31,7 @@ public class App {
                 Even.game();
                 break;
             case 3:
-                Engine.gameLogic();
+                Engine.calcGameLogic();
                 break;
             case 4:
                 GCD.game();

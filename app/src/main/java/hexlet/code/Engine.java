@@ -7,31 +7,17 @@ public class Engine {
     public static int roundsQuantity = 3;
 
 
-    public static void gameLogic() {
+    public static void calcGameLogic() {
 
         askMainQuestion();
 
-            playRound();
-            if (playRound().equals("Correct!")){
-                for (var i = 1; i <= Engine.roundsQuantity; i++) {
-                    playRound();
+        for (var i = 1; i <= Engine.roundsQuantity && playRound().equals("Correct!"); i++) {
 
-                    if (i == 3) {
-                        System.out.println("Congratulations, " + Cli.userName + "!");
-                        break;
-                    }
-                }
-            } else {
-
+            if (i == 3) {
+                System.out.println("Congratulations, " + Cli.userName + "!");
+                break;
             }
-//            for (var i = 1; i <= Engine.roundsQuantity && playRound().equals("Correct!"); i++) {
-//                playRound();
-//
-//                if (i == 3) {
-//                    System.out.println("Congratulations, " + Cli.userName + "!");
-//                    break;
-//                }
-//            }
+        }
 
 
     }
