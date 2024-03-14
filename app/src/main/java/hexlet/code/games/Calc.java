@@ -1,11 +1,12 @@
 package hexlet.code.games;
 
 import hexlet.code.Cli;
+import hexlet.code.Engine;
 
 import java.util.Random;
 import java.util.Scanner;
 
-public class Calculator {
+public class Calc {
 
 
     static String userName = Cli.greeting();
@@ -17,7 +18,7 @@ public class Calculator {
     }
 
 
-    public static String gameRound() {
+    public static String playRound() {
         Random random = new Random();
         int operationTypeIndex = random.nextInt(3);
         int operandOne = random.nextInt(20);
@@ -38,11 +39,12 @@ public class Calculator {
         Scanner scanner = new Scanner(System.in);
         int userAnswer = scanner.nextInt();
 
-        return Calculator.checkCorrectness(operandOne, operandTwo, operationTypeIndex, userAnswer, userName);
+        return Calc.getRoundResult(operandOne, operandTwo, operationTypeIndex, userAnswer, userName);
 
     }
 
-    public static String checkCorrectness(int operandOne, int operandTwo, int operationTypeIndex, int userAnswer, String userName) {
+
+    public static String getRoundResult(int operandOne, int operandTwo, int operationTypeIndex, int userAnswer, String userName) {
         String resultAnswer = "";
         System.out.println("Your answer: " + userAnswer);
 
