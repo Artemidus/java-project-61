@@ -28,13 +28,13 @@ public class App {
                 Cli.greeting();
                 break;
             case 2:
-                Even.game();
+                Engine.evenGameLogic();
                 break;
             case 3:
                 Engine.calcGameLogic();
                 break;
             case 4:
-                GCD.game();
+                Engine.gcdGameLogic();
         }
 
         scanner.close();
