@@ -4,4 +4,5 @@
 
 
 Link on the "Even" game asciinema - https://asciinema.org/a/ta6v04PwSSFWgI6nrm2sRl1tR
-\nLink on the "Calc" game asciinema - https://asciinema.org/a/yVeAbn606pSg9CSGsvmesOoxw
+
+Link on the "Calc" game asciinema - https://asciinema.org/a/yVeAbn606pSg9CSGsvmesOoxw
