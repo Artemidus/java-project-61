@@ -4,4 +4,9 @@
 
 
 Link on the "Even" game asciinema - https://asciinema.org/a/ta6v04PwSSFWgI6nrm2sRl1tR
+
 Link on the "Calc" game asciinema - https://asciinema.org/a/yVeAbn606pSg9CSGsvmesOoxw
+
+Link on the "GCD" game asciinema - https://asciinema.org/a/E4d62QkLQ09rxFwNE3DjpBVXz
+
+Link on the "Progression" game asciinema - https://asciinema.org/a/gvjpiPrekZupw7TACpFGJ1c0T
