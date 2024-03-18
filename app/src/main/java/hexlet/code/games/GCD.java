@@ -8,10 +8,10 @@ import java.util.Scanner;
 public class GCD {
     static String userName = Cli.greeting();
 
-    public static void tellToTheUserWhatToDo() {
+    public static void tellToUserWhatToDo() {
+
         System.out.println("Find the greatest common divisor of given numbers.");
     }
-
 
         public static String playRound() {
             Random random = new Random();
@@ -26,9 +26,6 @@ public class GCD {
             return GCD.isUserAnswerCorrect(operandOne, operandTwo, userAnswer, userName);
         }
 
-
-
-
     private static String isUserAnswerCorrect(int operandOne, int operandTwo, int userAnswer, String userName) {
         String resultAnswer = "";
         System.out.println("Your answer: " + userAnswer);
@@ -42,18 +39,15 @@ public class GCD {
             }
         }
 
-        int intermediateResult = operandOne + operandTwo;
+        int correctAnswer = operandOne + operandTwo;
 
-        if (intermediateResult == userAnswer) {
+        if (correctAnswer == userAnswer) {
             resultAnswer = "Correct!";
             System.out.println(resultAnswer);
         } else {
-            resultAnswer = "\'" + userAnswer + "\' is wrong answer ;(. Correct answer was \'" + intermediateResult + "\'\nLet's try again, " + userName + "!";
+            resultAnswer = "\'" + userAnswer + "\' is wrong answer ;(. Correct answer was \'" + correctAnswer + "\'\nLet's try again, " + userName + "!";
             System.out.println(resultAnswer);
         }
-
-
-
         return resultAnswer;
     }
 }

@@ -48,7 +48,6 @@ public class Calc {
      * @return - return us result of comparing userAnswer and correct result of expression we calculated
      */
 
-
     public static String isUserAnswerCorrect(int operandOne, int operandTwo, int operationTypeIndex, int userAnswer, String userName) {
         String resultAnswer = "";
         System.out.println("Your answer: " + userAnswer);

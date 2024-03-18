@@ -21,7 +21,6 @@ public class Even {
         return Even.isUserAnswerCorrect(operand, userAnswer, userName);
     }
 
-
     public static String isUserAnswerCorrect(int operand, String userAnswer, String userName) {
         String answer = "";
         System.out.println("Your answer: " + userAnswer);

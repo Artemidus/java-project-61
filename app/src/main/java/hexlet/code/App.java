@@ -14,11 +14,14 @@ public class App {
                 + "\n2 - Even"
                 + "\n3 - Calc"
                 + "\n4 - GCD"
+                + "\n5 - Progression"
                 + "\n0 - Exit");
         Scanner scanner = new Scanner(System.in);
         int choice = scanner.nextInt();
 
         System.out.println("Your choice: " + choice);
+
+
 
         switch (choice) {
             case 0:
@@ -35,6 +38,8 @@ public class App {
                 break;
             case 4:
                 Engine.gcdGameLogic();
+            case 5:
+                Engine.progressionGameLogic();
         }
 
         scanner.close();
