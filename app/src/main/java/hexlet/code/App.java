@@ -1,8 +1,7 @@
 package hexlet.code;
 
 
-import hexlet.code.games.Even;
-import hexlet.code.games.GCD;
+import hexlet.code.games.*;
 
 import java.util.Scanner;
 
@@ -22,26 +21,25 @@ public class App {
         System.out.println("Your choice: " + choice);
 
 
-
         switch (choice) {
             case 0:
-                System.out.println("0 - Exit");
                 break;
             case 1:
                 Cli.greeting();
                 break;
             case 2:
-                Engine.evenGameLogic();
+                Even.run();
                 break;
             case 3:
-                Engine.calcGameLogic();
+                Calc.run();
                 break;
             case 4:
-                Engine.gcdGameLogic();
+                GCD.run();
+                break;
             case 5:
-                Engine.progressionGameLogic();
+                Progression.run();
+                break;
         }
-
         scanner.close();
 
     }

@@ -1,63 +1,37 @@
 package hexlet.code;
 
-import hexlet.code.games.Even;
-import hexlet.code.games.Calc;
-import hexlet.code.games.GCD;
-import hexlet.code.games.Progression;
-
+import java.util.Scanner;
 
 public class Engine {
-    public static int roundsQuantity = 3;
+    public static final int ROUNDS_COUNT = 3; //константа по кол-ву раундов. еще может сканнер лежать в движке
+    public static String userName = Cli.greeting();
 
 
-    public static void evenGameLogic() {
-        Even.tellToTheUserWhatToDo();
+    public static void run(String[][] rounds, String rules) {
+        Scanner scanner = new Scanner(System.in);
+        int count = 0;
 
-        // loop that define quantity of game rounds if user's answer was correct and congratulates user if game was totally successful
-        for (var i = 1; i <= Engine.roundsQuantity && Even.playRound().equals("Correct!"); i++) {
-            if (i == 3) {
-                System.out.println("Congratulations, " + Cli.userName + "!");
+        System.out.println(rules);
+
+        for (String[] round : rounds) {
+            System.out.println("Question: " + round[0]);
+
+            System.out.print("Your answer: ");
+            String userAnswer = scanner.next();
+            //here we take user answer and comparing it with correct one
+            if (userAnswer.equals(round[1])) {
+                System.out.println("Correct!");
+                count++;
+                if (count == 3 && userAnswer.equals(round[1])) {
+                    System.out.println("Congratulations, " + userName + "!");
+                    break;
+                }
+            } else {
+                System.out.println("\"" + userAnswer + "\" is wrong answer ;(. Correct answer was \"" + round[1] + "\".\nLet's try again, " + userName + "!");
                 break;
             }
-        }
+        }   scanner.close();
     }
-
-    public static void calcGameLogic() {
-        Calc.tellToTheUserWhatToDo();
-
-        // loop that define quantity of game rounds if user's answer was correct and congratulates user if game was totally successful
-        for (var i = 1; i <= Engine.roundsQuantity && Calc.playRound().equals("Correct!"); i++) {
-            if (i == 3) {
-                System.out.println("Congratulations, " + Cli.userName + "!");
-                break;
-            }
-        }
-    }
-
-    public static void gcdGameLogic() {
-        GCD.tellToUserWhatToDo();
-
-        // loop that define quantity of game rounds if user's answer was correct and congratulates user if game was totally successful
-        for (var i = 1; i <= Engine.roundsQuantity && GCD.playRound().equals("Correct!"); i++) {
-            if (i == 3) {
-                System.out.println("Congratulations, " + Cli.userName + "!");
-                break;
-            }
-        }
-    }
-
-    public static void progressionGameLogic() {
-        Progression.tellToUserWhatToDo();
-
-        // loop that define quantity of game rounds if user's answer was correct and congratulates user if game was totally successful
-        for (var i = 1; i <= Engine.roundsQuantity && Progression.playRound().equals("Correct!"); i++) {
-            if (i == 3) {
-                System.out.println("Congratulations, " + Cli.userName + "!");
-                break;
-            }
-        }
-    }
-
 
 }
 

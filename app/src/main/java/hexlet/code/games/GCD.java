@@ -1,54 +1,42 @@
 package hexlet.code.games;
 
-import hexlet.code.Cli;
+import hexlet.code.Engine;
 
 import java.util.Random;
-import java.util.Scanner;
 
 public class GCD {
-    static String userName = Cli.greeting();
-
-    public static void tellToUserWhatToDo() {
-
-        System.out.println("Find the greatest common divisor of given numbers.");
+    public static void run() {
+        var questions = new String[Engine.ROUNDS_COUNT][];
+        for (int i = 0; i < Engine.ROUNDS_COUNT; i++) {
+            questions[i] = generateRound();
+        }
+        Engine.run(questions, "Find the greatest common divisor of given numbers.");
     }
 
-        public static String playRound() {
-            Random random = new Random();
-            int operandOne = random.nextInt(100);
-            int operandTwo = random.nextInt(100);
-            System.out.println("Question: " + operandOne + " " + operandTwo);
 
-            //here we get user answer
-            Scanner scanner = new Scanner(System.in);
-            int userAnswer = scanner.nextInt();
+    public static String[] generateRound() {
+        Random random = new Random();
+        int operandOne = random.nextInt(100);
+        int operandTwo = random.nextInt(100);
+        String question = operandOne + " " + operandTwo;
+        var correctAnswer = GCD.calculateGCD(operandOne, operandTwo);
 
-            return GCD.isUserAnswerCorrect(operandOne, operandTwo, userAnswer, userName);
-        }
+        return new String[]{question, correctAnswer};
+    }
 
-    private static String isUserAnswerCorrect(int operandOne, int operandTwo, int userAnswer, String userName) {
+    private static String calculateGCD(int operandOne, int operandTwo) {
         String resultAnswer = "";
-        System.out.println("Your answer: " + userAnswer);
 
-        while (operandOne != 0 && operandTwo != 0){
+        while (operandOne != 0 && operandTwo != 0) {
             if (operandOne > operandTwo) {
                 operandOne = operandOne % operandTwo;
-            }
-            else {
+            } else {
                 operandTwo = operandTwo % operandOne;
             }
         }
 
-        int correctAnswer = operandOne + operandTwo;
+        return String.valueOf(operandOne + operandTwo);
 
-        if (correctAnswer == userAnswer) {
-            resultAnswer = "Correct!";
-            System.out.println(resultAnswer);
-        } else {
-            resultAnswer = "\'" + userAnswer + "\' is wrong answer ;(. Correct answer was \'" + correctAnswer + "\'\nLet's try again, " + userName + "!";
-            System.out.println(resultAnswer);
-        }
-        return resultAnswer;
     }
 }
 

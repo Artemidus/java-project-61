@@ -1,69 +1,46 @@
 package hexlet.code.games;
 
-import hexlet.code.Cli;
+import hexlet.code.Engine;
 
 import java.util.Random;
-import java.util.Scanner;
 
 public class Progression {
-    static String userName = Cli.greeting();
-
-    public static void tellToUserWhatToDo() {
-        System.out.println("What number is missing in the progression?");
+    public static void run() {
+        var questions = new String[Engine.ROUNDS_COUNT][];
+        for (int i = 0; i < Engine.ROUNDS_COUNT; i++) {
+            questions[i] = generateRound();
+        }
+        Engine.run(questions, "What number is missing in the progression?");
     }
 
-    public static String playRound() {
+    public static String[] generateRound() {
         Random random = new Random();
-        //generate size of progression
         int sizeOfProgression = random.nextInt(6, 11);
-
-        //generate first number's value
-        int firstNumber = random.nextInt(1, 199);
-
-        //generate step of progression
+        int firstValue = random.nextInt(1, 199);
         int stepOfIncreasing = random.nextInt(1, 11);
+        int hiddenIndex = random.nextInt(1, sizeOfProgression);
 
-        //generate number of progression that we will hide
-        int hiddenNumber = random.nextInt(1, sizeOfProgression);
+        var progression = generateProgression(firstValue, stepOfIncreasing, sizeOfProgression);
+        var correctAnswer = progression[hiddenIndex];
 
-        //create empty array
+        progression[hiddenIndex] = "..";
+        String result = String.join(" ", progression);
+        return new String[]{result, String.valueOf(correctAnswer)};
+    }
+
+    private static String[] generateProgression(int firstValue, int step, int sizeOfProgression) {
         int[] numbers = new int[sizeOfProgression];
-
-        var result = new StringBuilder(firstNumber);
+        numbers[0] = firstValue;
 
         for (var i = 1; i < numbers.length; i++) {
-            if (i == hiddenNumber) {
-                numbers[i] = numbers[i - 1] + stepOfIncreasing;
-                result.append("..");
-            } else {
-                numbers[i] = numbers[i - 1] + stepOfIncreasing;
-                result.append(" ");
-                result.append(numbers[i]);
-                result.append(" ");
-            }
+            numbers[i] = numbers[i - 1] + step;
         }
 
-        System.out.println("Question: " + result.toString());
-        int rightAnswer = numbers[hiddenNumber - 1] + stepOfIncreasing;
-
-        //here we get user answer
-        Scanner scanner = new Scanner(System.in);
-        int userAnswer = scanner.nextInt();
-
-        return Progression.isUserAnswerCorrect(rightAnswer, userAnswer, userName);
-    }
-
-    private static String isUserAnswerCorrect(int correctAnswer, int userAnswer, String userName) {
-        String resultAnswer = "";
-        System.out.println("Your answer: " + userAnswer);
-
-        if (correctAnswer == userAnswer) {
-            resultAnswer = "Correct!";
-            System.out.println(resultAnswer);
-        } else {
-            resultAnswer = "\'" + userAnswer + "\' is wrong answer ;(. Correct answer was \'" + correctAnswer + "\'\nLet's try again, " + userName + "!";
-            System.out.println(resultAnswer);
+        //converting int[] to the String[]
+        String[] strArray = new String[numbers.length];
+        for (int i = 0; i < numbers.length; i++) {
+            strArray[i] = String.valueOf(numbers[i]);
         }
-        return resultAnswer;
+        return strArray;
     }
 }

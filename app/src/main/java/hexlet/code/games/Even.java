@@ -1,47 +1,32 @@
 package hexlet.code.games;
 
-import hexlet.code.Cli;
-import java.util.Scanner;
+import hexlet.code.Engine;
+
 import java.util.Random;
 
 public class Even {
-    static String userName = Cli.greeting();
 
-    public static void tellToTheUserWhatToDo() {
-        System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");;
-    }
-    public static String playRound() {
-        Random random = new Random();
-        int operand = random.nextInt(99);
-        System.out.println("Question: " + operand);
+    private static final int NUMBER_UPPER_LIMIT = 99;
 
-        Scanner scanner = new Scanner(System.in);
-        String userAnswer = scanner.next();
-
-        return Even.isUserAnswerCorrect(operand, userAnswer, userName);
-    }
-
-    public static String isUserAnswerCorrect(int operand, String userAnswer, String userName) {
-        String answer = "";
-        System.out.println("Your answer: " + userAnswer);
-        if (((operand % 2 == 0) && userAnswer.equalsIgnoreCase("yes"))) {
-            answer = "Correct!";
-            System.out.println(answer);
-        } else if (((operand % 2 != 0) && userAnswer.equalsIgnoreCase("no"))) {
-            answer = "Correct!";
-            System.out.println(answer);
-        } else if (((operand % 2 == 0) && userAnswer.equalsIgnoreCase("no"))) {
-            answer = "\'no\' is wrong answer ;(. Correct answer was \'yes\'.\nLet's try again, " + userName + "!";
-            System.out.println(answer);
-        } else if (((operand % 2 != 0) && userAnswer.equalsIgnoreCase("yes"))) {
-            answer = "\'yes\' is wrong answer ;(. Correct answer was \'no\'.\nLet's try again, " + userName + "!";
-            System.out.println(answer);
-        } else {
-            answer = userAnswer + " is wrong answer ;(.Let's try again, " + userName + "!";
-            System.out.println(answer);
+    public static void run() {
+        var questions = new String[Engine.ROUNDS_COUNT][];
+        for (int i = 0; i < Engine.ROUNDS_COUNT; i++) {
+            questions[i] = generateRound();
         }
-        return answer;
+        Engine.run(questions, "Answer 'yes' if the number is even, otherwise answer 'no'.");
     }
 
+    private static String[] generateRound() {
+        //тут будет логика генерации вопросов и ответов
+        // number - это вопрос
+        // correctAnswer - это ответ
+        var number = new Random().nextInt(1, NUMBER_UPPER_LIMIT);
+        var correctAnswer = isEven(number) ? "yes" : "no";
+        return new String[]{String.valueOf(number), correctAnswer};
+    }
+
+    private static boolean isEven(int number) {
+        return number % 2 == 0;
+    }
 }
 
