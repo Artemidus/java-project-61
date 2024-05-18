@@ -18,7 +18,7 @@ public class GCD {
         int operandOne = random.nextInt(100);
         int operandTwo = random.nextInt(100);
         String question = operandOne + " " + operandTwo;
-        var correctAnswer = GCD.calculateGCD(operandOne, operandTwo);
+        var correctAnswer = calculateGCD(operandOne, operandTwo);
 
         return new String[]{question, correctAnswer};
     }

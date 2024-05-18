@@ -1,8 +1,5 @@
 package hexlet.code;
 
-
-import hexlet.code.games.*;
-
 import java.util.Scanner;
 
 public class App {
@@ -22,8 +19,10 @@ public class App {
         System.out.println("Your choice: " + choice);
 
 
+
         switch (choice) {
             case 0:
+                System.out.println("0 - Exit");
                 break;
             case 1:
                 Cli.greeting();
@@ -44,8 +43,6 @@ public class App {
                 Prime.run();
                 break;
         }
-
         scanner.close();
-
     }
 }
