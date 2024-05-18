@@ -13,7 +13,7 @@ public class GCD {
         Engine.run(questions, "Find the greatest common divisor of given numbers.");
     }
 
-    public static String[] generateRound() {
+    private static String[] generateRound() {
         Random random = new Random();
         int operandOne = random.nextInt(100);
         int operandTwo = random.nextInt(100);

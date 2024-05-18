@@ -14,7 +14,7 @@ public class Calc {
         Engine.run(questions, "What is the result of the expression?");
     }
 
-    public static String[] generateRound() {
+    private static String[] generateRound() {
         Random random = new Random();
         int operationType = random.nextInt(3);
         int operandOne = random.nextInt(20);
@@ -31,7 +31,7 @@ public class Calc {
         return new String[]{question, String.valueOf(correctAnswer)};
     }
 
-    public static int calculateResult(int operandOne, int operandTwo, int operationType) {
+    private static int calculateResult(int operandOne, int operandTwo, int operationType) {
         return switch (operationType) {
             case 0 -> operandOne + operandTwo;
             case 1 -> operandOne - operandTwo;

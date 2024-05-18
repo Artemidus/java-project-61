@@ -13,7 +13,7 @@ public class Progression {
         Engine.run(questions, "What number is missing in the progression?");
     }
 
-    public static String[] generateRound() {
+    private static String[] generateRound() {
         Random random = new Random();
         int sizeOfProgression = random.nextInt(6, 11);
         int firstValue = random.nextInt(1, 199);
@@ -35,7 +35,6 @@ public class Progression {
         for (var i = 1; i < numbers.length; i++) {
             numbers[i] = numbers[i - 1] + step;
         }
-
         //converting int[] to the String[]
         String[] strArray = new String[numbers.length];
         for (int i = 0; i < numbers.length; i++) {
