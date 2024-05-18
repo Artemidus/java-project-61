@@ -20,7 +20,7 @@ public class Progression {
 
     private static String[] generateRound() {
         Random random = new Random();
-        int sizeOfProgression = random.nextInt(MIN_PROGRESSION_LENGTH,MAX_PROGRESSION_LENGTH);
+        int sizeOfProgression = random.nextInt(MIN_PROGRESSION_LENGTH, MAX_PROGRESSION_LENGTH);
         int firstValue = random.nextInt(MAX_FIRST_VALUE);
         int stepOfIncreasing = random.nextInt(MAX_PROGRESSION_STEP);
         int hiddenIndex = random.nextInt(sizeOfProgression);

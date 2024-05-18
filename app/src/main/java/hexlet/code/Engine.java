@@ -21,7 +21,7 @@ public class Engine {
             if (answer.equals(round[1])) {
                 System.out.println("Correct!");
                 count++;
-                if (count == 3 && answer.equals(round[1])) {
+                if (count == ROUNDS_COUNT && answer.equals(round[1])) {
                     System.out.println("Congratulations, " + userName + "!");
                     break;
                 }
