@@ -5,10 +5,10 @@ import hexlet.code.Engine;
 import java.util.Random;
 
 public class Progression {
-    private static final int MAX_FIRST_VALUE = 200;
-    private static final int MAX_PROGRESSION_STEP = 20;
     private static final int MIN_PROGRESSION_LENGTH = 6;
     private static final int MAX_PROGRESSION_LENGTH = 10;
+    private static final int MAX_FIRST_VALUE = 200;
+    private static final int MAX_PROGRESSION_STEP = 20;
 
     public static void run() {
         var questions = new String[Engine.ROUNDS_COUNT][];
