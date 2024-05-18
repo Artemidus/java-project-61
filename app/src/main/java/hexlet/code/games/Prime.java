@@ -24,14 +24,15 @@ public class Prime {
     }
 
     private static boolean isPrime(int number) {
-        int[] primeNumbers = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97};
-        int result = 0;
 
-        for (var primeNumber : primeNumbers) {
-            if (number == primeNumber) {
-                result = 1;
+        if (number <= 1) {
+            return false;
+        }
+        for (int i = 2; i <= Math.sqrt(number); i++) {
+            if (number % i == 0) {
+                return false;
             }
         }
-        return result == 1;
+        return true;
     }
 }

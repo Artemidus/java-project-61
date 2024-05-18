@@ -1,6 +1,10 @@
 package hexlet.code;
 
-import hexlet.code.games.*;
+import hexlet.code.games.Even;
+import hexlet.code.games.Prime;
+import hexlet.code.games.Calc;
+import hexlet.code.games.Progression;
+import hexlet.code.games.GCD;
 
 import java.util.Scanner;
 
@@ -20,30 +24,16 @@ public class App {
 
         System.out.println("Your choice: " + choice);
 
-
-
         switch (choice) {
-            case 0:
-                System.out.println("0 - Exit");
-                break;
-            case 1:
-                Cli.greeting();
-                break;
-            case 2:
-                Even.run();
-                break;
-            case 3:
-                Calc.run();
-                break;
-            case 4:
-                GCD.run();
-                break;
-            case 5:
-                Progression.run();
-                break;
-            case 6:
-                Prime.run();
-                break;
+            case 0 -> System.out.println("0 - Exit");
+            case 1 -> Cli.greeting();
+            case 2 -> Even.run();
+            case 3 -> Calc.run();
+            case 4 -> GCD.run();
+            case 5 -> Progression.run();
+            case 6 -> Prime.run();
+            default -> throw new RuntimeException("unknown game");
+
         }
         scanner.close();
     }

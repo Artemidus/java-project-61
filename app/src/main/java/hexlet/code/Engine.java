@@ -17,20 +17,26 @@ public class Engine {
             System.out.println("Question: " + round[0]);
 
             System.out.print("Your answer: ");
-            String userAnswer = scanner.next();
+            String answer = scanner.next();
             //here we take user answer and comparing it with correct one
-            if (userAnswer.equals(round[1])) {
+            if (answer.equals(round[1])) {
                 System.out.println("Correct!");
                 count++;
-                if (count == 3 && userAnswer.equals(round[1])) {
+                if (count == 3 && answer.equals(round[1])) {
                     System.out.println("Congratulations, " + userName + "!");
                     break;
                 }
             } else {
-                System.out.println("\"" + userAnswer + "\" is wrong answer ;(. Correct answer was \"" + round[1] + "\".\nLet's try again, " + userName + "!");
+                System.out.println("\""
+                        + answer
+                        + "\" is wrong answer ;(. Correct answer was \""
+                        + round[1] + "\".\nLet's try again, "
+                        + userName
+                        + "!");
                 break;
             }
-        }   scanner.close();
+        }
+        scanner.close();
     }
 
 }

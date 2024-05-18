@@ -21,10 +21,12 @@ public class Calc {
         int operandTwo = random.nextInt(20);
         String question = "";
 
-        switch (operationType) {
-            case 0 -> question = operandOne + " + " + operandTwo;
-            case 1 -> question = operandOne + " - " + operandTwo;
-            case 2 -> question = operandOne + " * " + operandTwo;
+        if (operationType == 0) {
+            question = operandOne + " + " + operandTwo;
+        } else if (operationType == 1) {
+            question = operandOne + " - " + operandTwo;
+        } else {
+            question = operandOne + " * " + operandTwo;
         }
 
         var correctAnswer = calculateResult(operandOne, operandTwo, operationType);
