@@ -5,6 +5,8 @@ import hexlet.code.Engine;
 import java.util.Random;
 
 public class GCD {
+    private static final int MAX_RANDOM_NUMBER = 100;
+
     public static void run() {
         var questions = new String[Engine.ROUNDS_COUNT][];
         for (int i = 0; i < Engine.ROUNDS_COUNT; i++) {
@@ -15,8 +17,8 @@ public class GCD {
 
     private static String[] generateRound() {
         Random random = new Random();
-        int operandOne = random.nextInt(100);
-        int operandTwo = random.nextInt(100);
+        int operandOne = random.nextInt(MAX_RANDOM_NUMBER);
+        int operandTwo = random.nextInt(MAX_RANDOM_NUMBER);
         String question = operandOne + " " + operandTwo;
         var correctAnswer = calculateGCD(operandOne, operandTwo);
 
@@ -24,8 +26,6 @@ public class GCD {
     }
 
     private static String calculateGCD(int operandOne, int operandTwo) {
-        String resultAnswer = "";
-
         while (operandOne != 0 && operandTwo != 0) {
             if (operandOne > operandTwo) {
                 operandOne = operandOne % operandTwo;
@@ -34,7 +34,6 @@ public class GCD {
             }
         }
         return String.valueOf(operandOne + operandTwo);
-
     }
 }
 

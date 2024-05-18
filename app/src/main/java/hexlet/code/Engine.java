@@ -4,10 +4,9 @@ import java.util.Scanner;
 
 public class Engine {
     public static final int ROUNDS_COUNT = 3; //константа по кол-ву раундов. еще может сканнер лежать в движке
-    public static String userName = Cli.greeting();
-
 
     public static void run(String[][] rounds, String rules) {
+        String userName = Cli.greeting();
         Scanner scanner = new Scanner(System.in);
         int count = 0;
 

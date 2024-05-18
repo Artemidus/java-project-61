@@ -5,6 +5,8 @@ import hexlet.code.Engine;
 import java.util.Random;
 
 public class Calc {
+    private static final int QUANTITY_OF_AVAILABLE_OPERATIONS = 3;
+    private static final int OPERAND_MAX_VALUE = 20;
 
     public static void run() {
         var questions = new String[Engine.ROUNDS_COUNT][];
@@ -16,9 +18,9 @@ public class Calc {
 
     private static String[] generateRound() {
         Random random = new Random();
-        int operationType = random.nextInt(3);
-        int operandOne = random.nextInt(20);
-        int operandTwo = random.nextInt(20);
+        int operationType = random.nextInt(QUANTITY_OF_AVAILABLE_OPERATIONS);
+        int operandOne = random.nextInt(OPERAND_MAX_VALUE);
+        int operandTwo = random.nextInt(OPERAND_MAX_VALUE);
         String question = "";
 
         if (operationType == 0) {

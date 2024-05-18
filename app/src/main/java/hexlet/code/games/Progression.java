@@ -5,6 +5,11 @@ import hexlet.code.Engine;
 import java.util.Random;
 
 public class Progression {
+    private static final int MAX_FIRST_VALUE = 200;
+    private static final int MAX_PROGRESSION_STEP = 20;
+    private static final int MIN_PROGRESSION_LENGTH = 6;
+    private static final int MAX_PROGRESSION_LENGTH = 10;
+
     public static void run() {
         var questions = new String[Engine.ROUNDS_COUNT][];
         for (int i = 0; i < Engine.ROUNDS_COUNT; i++) {
@@ -15,10 +20,10 @@ public class Progression {
 
     private static String[] generateRound() {
         Random random = new Random();
-        int sizeOfProgression = random.nextInt(6, 11);
-        int firstValue = random.nextInt(1, 199);
-        int stepOfIncreasing = random.nextInt(1, 11);
-        int hiddenIndex = random.nextInt(1, sizeOfProgression);
+        int sizeOfProgression = random.nextInt(MIN_PROGRESSION_LENGTH,MAX_PROGRESSION_LENGTH);
+        int firstValue = random.nextInt(MAX_FIRST_VALUE);
+        int stepOfIncreasing = random.nextInt(MAX_PROGRESSION_STEP);
+        int hiddenIndex = random.nextInt(sizeOfProgression);
 
         var progression = generateProgression(firstValue, stepOfIncreasing, sizeOfProgression);
         var correctAnswer = progression[hiddenIndex];
