@@ -40,3 +40,9 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+
+###asciinema casts###
+.demo.cast
+.demo1.cast
+.demo_gcd_game.cast
+.demo_progressive.cast
