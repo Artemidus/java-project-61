@@ -3,12 +3,17 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/a0c5ef42a1e751596c58/maintainability)](https://codeclimate.com/github/Artemidus/java-project-61/maintainability)
 
 
-"Even" game asciinema - https://asciinema.org/a/ta6v04PwSSFWgI6nrm2sRl1tR
+Even game demo:
+[![asciicast](https://asciinema.org/a/er2YiF84VTl4QjmPRJUhzJ9at.svg)](https://asciinema.org/a/er2YiF84VTl4QjmPRJUhzJ9at)
 
-"Calc" game asciinema - https://asciinema.org/a/yVeAbn606pSg9CSGsvmesOoxw
+Calc game demo:
+[![asciicast](https://asciinema.org/a/Br3kwmlphGuvuaMUA31P0oi0A.svg)](https://asciinema.org/a/Br3kwmlphGuvuaMUA31P0oi0A)
 
-"GCD" game asciinema - https://asciinema.org/a/E4d62QkLQ09rxFwNE3DjpBVXz
+Greatest Common Divisor game demo:
+[![asciicast](https://asciinema.org/a/Br3kwmlphGuvuaMUA31P0oi0A.svg)](https://asciinema.org/a/Br3kwmlphGuvuaMUA31P0oi0A)
 
-"Progression" game asciinema - https://asciinema.org/a/gvjpiPrekZupw7TACpFGJ1c0T
+Progression game demo:
+[![asciicast](https://asciinema.org/a/K1xtARZ3F0GrgSMoyzH8HnMXO.svg)](https://asciinema.org/a/K1xtARZ3F0GrgSMoyzH8HnMXO)
 
-"isPrime" game asciinema - https://asciinema.org/a/7A9lv7DF3iMcRf5ddAuZICW4N
+isPrime game demo:
+[![asciicast](https://asciinema.org/a/EqtXTLJKiwVgrAXSWnrZGVbJN.svg)](https://asciinema.org/a/EqtXTLJKiwVgrAXSWnrZGVbJN)
