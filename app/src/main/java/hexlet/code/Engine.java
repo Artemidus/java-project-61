@@ -17,7 +17,7 @@ public class Engine {
 
             System.out.print("Your answer: ");
             String answer = scanner.next();
-            //here we take user answer and comparing it with correct one
+
             if (answer.equals(round[1])) {
                 System.out.println("Correct!");
                 count++;

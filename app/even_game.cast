@@ -1,3 +1,0 @@
-{"version": 2, "width": 246, "height": 7, "timestamp": 1716321277, "env": {"SHELL": "/bin/bash", "TERM": "xterm-256color"}}
-[0.012832, "o", "bash: /.asdf/asdf.sh: No such file or directory\r\nbash: .: /home/artemidus/.cargo/bin: is a directory\r\n"]
-[0.018659, "o", "\u001b[?2004happ (main) $ "]
