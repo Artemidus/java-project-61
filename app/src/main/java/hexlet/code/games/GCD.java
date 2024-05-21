@@ -22,10 +22,10 @@ public class GCD {
         String question = operandOne + " " + operandTwo;
         var correctAnswer = calculateGCD(operandOne, operandTwo);
 
-        return new String[]{question, correctAnswer};
+        return new String[]{question, String.valueOf(correctAnswer)};
     }
 
-    private static String calculateGCD(int operandOne, int operandTwo) {
+    private static int calculateGCD(int operandOne, int operandTwo) {
         while (operandOne != 0 && operandTwo != 0) {
             if (operandOne > operandTwo) {
                 operandOne = operandOne % operandTwo;
@@ -33,7 +33,7 @@ public class GCD {
                 operandTwo = operandTwo % operandOne;
             }
         }
-        return String.valueOf(operandOne + operandTwo);
+        return operandOne + operandTwo;
     }
 }
 
